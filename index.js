@@ -364,6 +364,8 @@ const libroEjemplo = [
 libros.push(libroEjemplo)
 console.log(libros);
 
+libros.pop()
+console.log(libros);
 
 
 
