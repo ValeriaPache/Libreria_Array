@@ -367,6 +367,9 @@ console.log(libros);
 libros.pop()
 console.log(libros);
 
+libros.shift(libroEjemplo)
+console.log(libros);
+
 
 
 
