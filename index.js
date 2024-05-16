@@ -370,6 +370,8 @@ console.log(libros);
 libros.shift(libroEjemplo)
 console.log(libros);
 
+console.log("Pila actual de libros:", libros);
+
 
 
 
