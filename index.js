@@ -361,6 +361,8 @@ const libroEjemplo = [
     }
 ];
 
+libros.push(libroEjemplo)
+console.log(libros);
 
 
 
