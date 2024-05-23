@@ -365,7 +365,9 @@ console.log("1. Mostrar pila de libros");
 console.log("2. Añadir un libro a la pila");
 console.log("3. Quitar el último libro de la pila");
 console.log("4. Mostrar la longitud de la pila");
-console.log("5. Salir");
+console.log("5. Mostrar la una lista de libros");
+console.log("6. Mostrar 10 iteraciones diferentes");
+console.log("7. Salir");
 }
 
 function mostrarLibros(libros) {
@@ -390,6 +392,83 @@ function mostrarLongitud(libros) {
 console.log(`Longitud del array: ${libros.length}`);
 }
 
+//Realizar uso del array Method .map y listar los libros por Titulo, Autor, Editorial y Precio
+
+const lista = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    autor: libros.autor,
+    editorial: libros.editorial,
+    precio: libros.precio,
+  }
+});
+
+
+//Crear 10 iteraciones diferentes manteniendo el atributo Titulo
+
+const lista1 = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    genero: libros.genero,
+  }
+});
+const lista2 = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    idioma: libros.idioma,
+  }
+});
+const lista3 = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    formato: libros.formato,
+  }
+});
+const lista4 = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    isbn: libros.isbn,
+  }
+});
+const lista5 = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    descripcion: libros.descripcion,
+  }
+});
+const lista6 = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    estado: libros.estado,
+  }
+});
+const lista7 = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    ubicacion: libros.ubicacion,
+  }
+});
+const lista8 = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    editorial: libros.editorial,
+  }
+});
+const lista9 = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    paginas: libros.paginas,
+  }
+});
+const lista10 = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    peso: libros.peso,
+  }
+});
+
+
+
 var continuar = "si";
 
 do {
@@ -409,7 +488,22 @@ switch (opcion) {
   case '4':
     mostrarLongitud(libros);
     break;
-  case '5':
+    case '5':
+    console.table(lista);
+    break;
+    case '6':
+    console.table(lista1);
+    console.table(lista2);
+    console.table(lista3);
+    console.table(lista4);
+    console.table(lista5);
+    console.table(lista6);
+    console.table(lista7);
+    console.table(lista8);
+    console.table(lista9);
+    console.table(lista10);
+    break;
+  case '7':
     continuar = "no";
     console.log("Saliendo del programa...");
     break;
@@ -421,10 +515,6 @@ if (continuar !== "no") {
   continuar = prompt("Desea continuar (si/no)").toLowerCase();
 }
 } while (continuar === "si");
-
-
-//Realizar uso del array Method .map y listar los libros por Titulo, Autor, Editorial y Precio
-
 
 
 
