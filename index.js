@@ -28,7 +28,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Atenas",
     fecha_publicacion: "-800-01-01",
-    editorial: "Penguin Classics",
+    editorial: "Editorial Clasicos",
     paginas: "541",
     dimensiones: "15x3x23cm",
     peso: "0.7 Kg",
@@ -45,7 +45,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Bogotá",
     fecha_publicacion: "1967-05-30",
-    editorial: "Editorial Sudamericana",
+    editorial: "Editorial Clasicos",
     paginas: "417",
     dimensiones: "13x2.5x20 cm",
     peso: "0.5 Kg",
@@ -62,7 +62,7 @@ let libros = [
     estado: "Usado",
     ubicacion: "Barcelona",
     fecha_publicacion: "1844-03-28",
-    editorial: "Editorial Castalia",
+    editorial: "Editorial Clasicos",
     paginas: "240",
     dimensiones: "12x1.8x19 cm",
     peso: "0.3 Kg",
@@ -79,7 +79,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Londres",
     fecha_publicacion: "1949-06-08",
-    editorial: "Secker & Warburg",
+    editorial: "Editorial Clasicos",
     paginas: "328",
     dimensiones: "13x2x20 cm",
     peso: "0.4 kg"
@@ -96,7 +96,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Nueva York",
     fecha_publicacion: "1960-07-11",
-    editorial: "J.B. Lippincott & Co.",
+    editorial: "Editorial Sudamericana",
     paginas: "281",
     dimensiones: "14x2.5x21 cm",
     peso: "0.6 kg"
@@ -113,7 +113,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Nueva York",
     fecha_publicacion: "1925-04-10",
-    editorial: "Charles Scribner's Sons",
+    editorial: "Editorial Sudamericana",
     paginas: 180,
     dimensiones: "13x1.5x20 cm",
     peso: "0.3 kg"
@@ -130,7 +130,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Londres",
     fecha_publicacion: "1813-01-28",
-    editorial: "T. Egerton",
+    editorial: "Editorial Sudamericana",
     paginas: 279,
     dimensiones: "12x1.8x19 cm",
     peso: "0.35 kg"
@@ -147,7 +147,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Atenas",
     fecha_publicacion: "-800-01-01",
-    editorial: "Penguin Classics",
+    editorial: "Editorial Sudamericana",
     paginas: 541,
     dimensiones: "15x3x23 cm",
     peso: "0.7 kg"
@@ -164,7 +164,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Florencia",
     fecha_publicacion: "1320-01-01",
-    editorial: "Oxford University Press",
+    editorial: "Editorial Sudamericana",
     paginas: 798,
     dimensiones: "14x3.5x22 cm",
     peso: "0.9 kg"
@@ -198,7 +198,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "París",
     fecha_publicacion: "1862-01-01",
-    editorial: "Oxford University Press",
+    editorial: "Penguin Classics",
     paginas: 1463,
     dimensiones: "16x5x24 cm",
     peso: "1.5 kg"
@@ -215,7 +215,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Londres",
     fecha_publicacion: "1890-07-20",
-    editorial: "Lippincott's Monthly Magazine",
+    editorial: "Penguin Classics",
     paginas: 254,
     dimensiones: "12x1.6x18 cm",
     peso: "0.3 kg"
@@ -232,7 +232,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Londres",
     fecha_publicacion: "1603-01-01",
-    editorial: "Simon & Schuster",
+    editorial: "Penguin Classics",
     paginas: 342,
     dimensiones: "13x1.9x20 cm",
     peso: "0.4 kg"
@@ -249,7 +249,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Madrid",
     fecha_publicacion: "1605-01-16",
-    editorial: "Oxford University Press",
+    editorial: "Penguin Classics",
     paginas: 1072,
     dimensiones: "15",
     peso: "1kg"
@@ -266,7 +266,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Atenas",
     fecha_publicacion: "-800-01-01",
-    editorial: "Penguin Classics",
+    editorial: "Oxford University Press",
     paginas: 704,
     dimensiones: "15x3x23 cm",
     peso: "0.8 kg"
@@ -283,7 +283,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Moscú",
     fecha_publicacion: "1877-01-01",
-    editorial: "Penguin Classics",
+    editorial: "Oxford University Press",
     paginas: 964,
     dimensiones: "14x3.5x22 cm",
     peso: "1 kg"
@@ -300,7 +300,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Dublín",
     fecha_publicacion: "1922-02-02",
-    editorial: "Random House",
+    editorial: "Oxford University Press",
     paginas: 732,
     dimensiones: "16x3.8x24 cm",
     peso: "1.2 kg"
@@ -334,7 +334,7 @@ let libros = [
     estado: "Nuevo",
     ubicacion: "Praga",
     fecha_publicacion: "1915-01-01",
-    editorial: "Penguin Classics",
+    editorial: "Oxford University Press",
     paginas: 201,
     dimensiones: "12x1.5x18 cm",
     peso: "0.2 kg"
@@ -421,6 +421,10 @@ if (continuar !== "no") {
   continuar = prompt("Desea continuar (si/no)").toLowerCase();
 }
 } while (continuar === "si");
+
+
+//Realizar uso del array Method .map y listar los libros por Titulo, Autor, Editorial y Precio
+
 
 
 
