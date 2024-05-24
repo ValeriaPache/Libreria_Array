@@ -367,7 +367,8 @@ console.log("3. Quitar el último libro de la pila");
 console.log("4. Mostrar la longitud de la pila");
 console.log("5. Mostrar una lista de libros");
 console.log("6. Mostrar una lista de libros con descuento");
-console.log("7. Salir");
+console.log("7. Mostrar resumenes de este fragmento");
+console.log("8. Salir");
 }
 
 function mostrarMenuLista() {
@@ -380,8 +381,13 @@ function mostrarMenuLista() {
     console.log("Seleccione una opción:");
     console.log("1. Mostrar descuento");
     console.log("2. Mostrar los libros por Titulo, Autor, Editorial, Precio y descuento");
-    }
+  }
 
+    function mostrarMenuResumen() {
+      console.log("Seleccione una opción:");
+      console.log("1. Mostrar Libros con precio mayor a 50 dolares");
+      console.log("2. Mostrar libros ordenas por numeros de paginas y resumen de los libros por Titulo, Autor, Editorial y paginas");
+    }
 function mostrarLibros(libros) {
 console.log("Pila actual de libros:", libros);
 }
@@ -503,6 +509,26 @@ const listaDescuento = libros.map((libros) => {
 
 
 
+//Obtener un array con los libros que tengan un precio mayor a 50 dolares
+
+const librosPrecioMayor = libros.filter((libro) => {
+  return libro.precio > 50
+});
+
+//Realizar un array con el resumen de libros por numero mas alto de paginas mostrando, titulo, autor, editorial, paginas
+
+const resumenLibros = libros.sort((a,b)=> b.paginas - a.paginas)
+ .map((libros) => {
+  return{
+    titulo: libros.titulo,
+    autor: libros.autor,
+    editorial: libros.editorial,
+    paginas: libros.paginas
+  }
+});
+
+
+
 var continuar = "si";
 
 do {
@@ -562,7 +588,22 @@ do {
           break;
       }
       break;
-    case '7':
+      case '7':
+      mostrarMenuResumen();
+      var subOpcionResumen = prompt("Seleccione una opción:");
+      switch (subOpcionResumen) {
+        case '1':
+          console.table(librosPrecioMayor);
+        break;
+        case '2':
+          console.table(resumenLibros);
+          break;
+        default:
+          console.log("Opción no válida en el submenú. Intente de nuevo.");
+          break;
+      }
+      break;
+    case '8':
       continuar = "no";
       console.log("Saliendo del programa...");
       break;
@@ -574,5 +615,6 @@ do {
     continuar = prompt("Desea continuar (si/no)").toLowerCase();
   }
 } while (continuar === "si");
+
 
 
