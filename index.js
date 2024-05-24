@@ -365,10 +365,15 @@ console.log("1. Mostrar pila de libros");
 console.log("2. Añadir un libro a la pila");
 console.log("3. Quitar el último libro de la pila");
 console.log("4. Mostrar la longitud de la pila");
-console.log("5. Mostrar la una lista de libros");
-console.log("6. Mostrar 10 iteraciones diferentes");
-console.log("7. Salir");
+console.log("5. Mostrar la una lista");
+console.log("6. Salir");
 }
+
+function mostrarMenu1() {
+  console.log("Seleccione una opción:");
+  console.log("1. Mostrar la una lista de libros");
+  console.log("2. Mostrar 10 iteraciones diferentes");
+  }
 
 function mostrarLibros(libros) {
 console.log("Pila actual de libros:", libros);
@@ -488,22 +493,28 @@ switch (opcion) {
   case '4':
     mostrarLongitud(libros);
     break;
-    case '5':
-    console.table(lista);
+    case '5':option=prompt(mostrarMenu1)
+    mostrarMenu1()
+    var opcion = prompt("Seleccione una opción:");
+      switch (opcion) {
+          case '1':
+          console.table(lista);
+          break;
+          case '2':
+          console.table(lista1);
+          console.table(lista2);
+          console.table(lista3);
+          console.table(lista4);
+          console.table(lista5);
+          console.table(lista6);
+          console.table(lista7);
+          console.table(lista8);
+          console.table(lista9);
+          console.table(lista10);
+          break;
+      }
     break;
-    case '6':
-    console.table(lista1);
-    console.table(lista2);
-    console.table(lista3);
-    console.table(lista4);
-    console.table(lista5);
-    console.table(lista6);
-    console.table(lista7);
-    console.table(lista8);
-    console.table(lista9);
-    console.table(lista10);
-    break;
-  case '7':
+  case '6':
     continuar = "no";
     console.log("Saliendo del programa...");
     break;
@@ -515,6 +526,3 @@ if (continuar !== "no") {
   continuar = prompt("Desea continuar (si/no)").toLowerCase();
 }
 } while (continuar === "si");
-
-
-
