@@ -360,64 +360,65 @@ const libroEjemplo = {
 };
 
 function mostrarMenu() {
-console.log("Seleccione una opción:");
-console.log("1. Mostrar pila de libros");
-console.log("2. Añadir un libro a la pila");
-console.log("3. Quitar el último libro de la pila");
-console.log("4. Mostrar la longitud de la pila");
-console.log("5. Mostrar una lista de libros");
-console.log("6. Mostrar una lista de libros con descuento");
-console.log("7. Mostrar resumenes de este fragmento");
-console.log("8. Mostrar libros ordenados por numeros de paginas");
-console.log("9. Mostrar Resumenes de este fragmento encadenados");
-console.log("10. Salir");
+  console.log("Seleccione una opción:");
+  console.log("1. Mostrar pila de libros");
+  console.log("2. Añadir un libro a la pila");
+  console.log("3. Quitar el último libro de la pila");
+  console.log("4. Mostrar la longitud de la pila");
+  console.log("5. Mostrar una lista de libros");
+  console.log("6. Mostrar una lista de libros con descuento");
+  console.log("7. Mostrar resumenes de este fragmento");
+  console.log("8. Mostrar libros ordenados por numeros de paginas");
+  console.log("9. Mostrar Resumenes de este fragmento encadenados");
+  console.log("10. Salir");
 }
 
 function mostrarMenuLista() {
   console.log("Seleccione una opción:");
   console.log("1. Mostrar la una lista de libros");
   console.log("2. Mostrar 10 iteraciones diferentes");
-  }
+}
 
-  function mostrarMenuDescuento() {
-    console.log("Seleccione una opción:");
-    console.log("1. Mostrar descuento");
-    console.log("2. Mostrar los libros por Titulo, Autor, Editorial, Precio y descuento");
-  }
+function mostrarMenuDescuento() {
+  console.log("Seleccione una opción:");
+  console.log("1. Mostrar descuento");
+  console.log("2. Mostrar los libros por Titulo, Autor, Editorial, Precio y descuento");
+}
 
-    function mostrarMenuResumen() {
-      console.log("Seleccione una opción:");
-      console.log("1. Mostrar Libros con precio mayor a 50 dolares");
-      console.log("2. Mostrar libros ordenas por numeros de paginas y resumen de los libros por Titulo, Autor, Editorial y paginas");
-    }
+function mostrarMenuResumen() {
+  console.log("Seleccione una opción:");
+  console.log("1. Mostrar Libros con precio mayor a 50 dolares");
+  console.log("2. Mostrar libros ordenas por numeros de paginas y resumen de los libros por Titulo, Autor, Editorial y paginas");
+}
 
-    function mostrarResumenEcadenados() {
-      console.log("Seleccione una opción:");
-      console.log("1. Mostrar libros caros por titulo mayores de 11 dolares, resumirlos por titulo, autor, precio");
-      console.log("2. Mostrar resumen de libros que tengan menos de 100 paginas resumirlos por titulo, autor, editorial y paginas");
-      console.log("3. Mostrar resumen de libros caros mayores a 20 dolares de mayor a menor resumirlos por titulo, autor, precio");
-      console.log("4. Mostrar resumen de libros por numero mas alto de paginas resumirlos por titulo, autor, editorial, paginas ordenados de mayor a menor");
-    }
+function mostrarResumenEcadenados() {
+  console.log("Seleccione una opción:");
+  console.log("1. Mostrar libros caros por titulo mayores de 11 dolares, resumirlos por titulo, autor, precio");
+  console.log("2. Mostrar resumen de libros que tengan menos de 100 paginas resumirlos por titulo, autor, editorial y paginas");
+  console.log("3. Mostrar resumen de libros caros mayores a 20 dolares de mayor a menor resumirlos por titulo, autor, precio");
+  console.log("4. Mostrar resumen de libros por numero mas alto de paginas resumirlos por titulo, autor, editorial, paginas ordenados de mayor a menor");
+}
+
 function mostrarLibros(libros) {
-console.log("Pila actual de libros:", libros);
+  console.log("Pila actual de libros:", libros);
 }
 
 function añadirLibro(libros, libro) {
-libros.push(libro);
-console.log(`Libro añadido: ${libro.titulo}`);
+  libros.push(libro);
+  console.log(`Libro añadido: ${libro.titulo}`);
 }
 
 function quitarLibro(libros) {
-const libroQuitado = libros.pop();
-if (libroQuitado) {
-  console.log(`Libro quitado: ${libroQuitado.titulo}`);
-} else {
-  console.log("No hay libros para quitar.");
-}
+  const libroQuitado = libros.pop();
+   if (libroQuitado) {
+     console.log(`Libro quitado: ${libroQuitado.titulo}`);
+   } else {
+     console.log("No hay libros para quitar.");
+   }
 }
 
 function mostrarLongitud(libros) {
-console.log(`Longitud del array: ${libros.length}`);
+  console.log(`Longitud del array: ${libros.length}`);
 }
 
 //Realizar uso del array Method .map y listar los libros por Titulo, Autor, Editorial y Precio
@@ -548,9 +549,6 @@ const resumenLibros = libros.sort((a,b)=> b.paginas - a.paginas)
 const  ordenarLibrosNumPaginas= libros.sort((a,b)=> b.paginas - a.paginas);
 
 
-
-
-
 //Obtener un array de libros caros por titulo mayores de 11 dolares, resumirlos por titulo, autor, precio. 
 
 
@@ -578,6 +576,7 @@ const menosPaginas = libros.filter((libro) => {
     paginas: libros.paginas
   }
 });
+
 //Realizar un resumen de libros caros mayores a 20 dolares de mayor a menor resumirlos por titulo, autor, precio.
 
 const librosCaros1 = libros.filter((libro) => {
@@ -590,6 +589,7 @@ const librosCaros1 = libros.filter((libro) => {
     precio: libros.precio,
   }
 });
+
 //Realizar un resumen de libros por numero mas alto de paginas resumirlos por titulo, autor, editorial, paginas ordenados de mayor a menor.
 
 const librosNumAltoPaginas = libros.sort((a,b)=> b.paginas - a.paginas)
@@ -607,108 +607,106 @@ var continuar = "si";
 
 do {
   mostrarMenu();
-  var opcion = prompt("Seleccione una opción:");
-  switch (opcion) {
-    case '1':
-      mostrarLibros(libros);
-      break;
-    case '2':
-      // Aquí deberías obtener detalles del libro a añadir, en este caso usamos el libroEjemplo
-      añadirLibro(libros, libroEjemplo);
-      break;
-    case '3':
-      quitarLibro(libros);
-      break;
-    case '4':
-      mostrarLongitud(libros);
-      break;
-    case '5':
-      mostrarMenuLista();
-      var subOpcion = prompt("Seleccione una opción:");
-      switch (subOpcion) {
+    var opcion = prompt("Seleccione una opción:");
+      switch (opcion) {
         case '1':
-          console.table(lista);
-          break;
-        case '2':
-          console.table(lista1);
-          console.table(lista2);
-          console.table(lista3);
-          console.table(lista4);
-          console.table(lista5);
-          console.table(lista6);
-          console.table(lista7);
-          console.table(lista8);
-          console.table(lista9);
-          console.table(lista10);
-          break;
-        default:
-          console.log("Opción no válida en el submenú. Intente de nuevo.");
-          break;
-      }
-      break;
-
-      case '6':
-      mostrarMenuDescuento();
-      var subOpciondesc = prompt("Seleccione una opción:");
-      switch (subOpciondesc) {
-        case '1':
-          console.table(listaConDescuento);
+         mostrarLibros(libros);
         break;
         case '2':
-          console.table(listaDescuento);
-          break;
-        default:
-          console.log("Opción no válida en el submenú. Intente de nuevo.");
-          break;
-      }
-      break;
-      case '7':
-      mostrarMenuResumen();
-      var subOpcionResumen = prompt("Seleccione una opción:");
-      switch (subOpcionResumen) {
-        case '1':
-          console.table(librosPrecioMayor);
+         // Aquí deberías obtener detalles del libro a añadir, en este caso usamos el libroEjemplo
+         añadirLibro(libros, libroEjemplo);
         break;
-        case '2':
-          console.table(resumenLibros);
-          break;
-        default:
-          console.log("Opción no válida en el submenú. Intente de nuevo.");
-          break;
-      }
-      break;
-      case '8':
-        console.table(ordenarLibrosNumPaginas);
-        break;
-
-        case '9':
-          mostrarResumenEcadenados();
-      var subOpcionEncadenados = prompt("Seleccione una opción:");
-      switch (subOpcionEncadenados) {
-        case '1':
-          console.table(librosCaros);
-        break;
-        case '2':
-          console.table(menosPaginas);
-          break;
-          case '3':
-          console.table(librosCaros1);
+        case '3':
+         quitarLibro(libros);
         break;
         case '4':
-          console.table(librosNumAltoPaginas);
-          break;
+         mostrarLongitud(libros);
+        break;
+        case '5':
+          mostrarMenuLista();
+            var subOpcion = prompt("Seleccione una opción:");
+          switch (subOpcion) {
+            case '1':
+             console.table(lista);
+             break;
+            case '2':
+             console.table(lista1);
+             console.table(lista2);
+             console.table(lista3);
+             console.table(lista4);
+             console.table(lista5);
+             console.table(lista6);
+             console.table(lista7);
+             console.table(lista8);
+             console.table(lista9);
+             console.table(lista10);
+            break;
+            default:
+             console.log("Opción no válida en el submenú. Intente de nuevo.");
+            break;
+          }
+        break;
+        case '6':
+         mostrarMenuDescuento();
+         var subOpciondesc = prompt("Seleccione una opción:");
+          switch (subOpciondesc) {
+            case '1':
+             console.table(listaConDescuento);
+            break;
+            case '2':
+             console.table(listaDescuento);
+            break;
+            default:
+             console.log("Opción no válida en el submenú. Intente de nuevo.");
+            break;
+          }
+        break;
+        case '7':
+          mostrarMenuResumen();
+           var subOpcionResumen = prompt("Seleccione una opción:");
+            switch (subOpcionResumen) {
+              case '1':
+                console.table(librosPrecioMayor);
+              break;
+              case '2':
+               console.table(resumenLibros);
+              break;
+              default:
+               console.log("Opción no válida en el submenú. Intente de nuevo.");
+              break;
+            }
+        break;
+        case '8':
+         console.table(ordenarLibrosNumPaginas);
+        break;
+        case '9':
+          mostrarResumenEcadenados();
+           var subOpcionEncadenados = prompt("Seleccione una opción:");
+            switch (subOpcionEncadenados) {
+              case '1':
+                console.table(librosCaros);
+              break;
+              case '2':
+                console.table(menosPaginas);
+              break;
+                case '3':
+                console.table(librosCaros1);
+              break;
+              case '4':
+                console.table(librosNumAltoPaginas);
+              break;
+              default:
+                console.log("Opción no válida en el submenú. Intente de nuevo.");
+              break;
+            }
+        break;
+        case '10':
+          continuar = "no";
+          console.log("Saliendo del programa...");
+        break;
         default:
-          console.log("Opción no válida en el submenú. Intente de nuevo.");
-          break;
-      }
-      break;
-    case '10':
-      continuar = "no";
-      console.log("Saliendo del programa...");
-      break;
-    default:
-      console.log("Opción no válida. Intente de nuevo.");
-      break;
+          console.log("Opción no válida. Intente de nuevo.");
+        break;
   }
   if (continuar !== "no") {
     continuar = prompt("Desea continuar (si/no)").toLowerCase();
