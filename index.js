@@ -4,7 +4,7 @@ let libros = [
     autor: "Miguel de Cervantes",
     genero: "Ficcion",
     idioma: "Español",
-    precio: 25.000,
+    precio: 55.000,
     formato: "Tapa dura",
     isbn: "978-3-16-148410-0",
     descripcion: "Un clásico de literatura",
@@ -21,7 +21,7 @@ let libros = [
     autor: "Homero",
     genero: "Epica",
     idioma: "Griego",
-    precio: 23.000,
+    precio: 70.000,
     formato: "Tapa dura",
     isbn: "978-0-14-026886-7",
     descripcion: "Una epopeya de aventuras",
@@ -38,7 +38,7 @@ let libros = [
     autor: "Gabriel García Márquez",
     genero: "Ficción",
     idioma: "Español",
-    precio: 20.00,
+    precio: 80.00,
     formato: "Tapa blanda",
     isbn: "978-0-14-310713-0",
     descripcion: "La historia de la familia Buendía.",
@@ -369,7 +369,8 @@ console.log("5. Mostrar una lista de libros");
 console.log("6. Mostrar una lista de libros con descuento");
 console.log("7. Mostrar resumenes de este fragmento");
 console.log("8. Mostrar libros ordenados por numeros de paginas");
-console.log("9. Salir");
+console.log("9. Mostrar Resumenes de este fragmento encadenados");
+console.log("10. Salir");
 }
 
 function mostrarMenuLista() {
@@ -388,6 +389,14 @@ function mostrarMenuLista() {
       console.log("Seleccione una opción:");
       console.log("1. Mostrar Libros con precio mayor a 50 dolares");
       console.log("2. Mostrar libros ordenas por numeros de paginas y resumen de los libros por Titulo, Autor, Editorial y paginas");
+    }
+
+    function mostrarResumenEcadenados() {
+      console.log("Seleccione una opción:");
+      console.log("1. Mostrar libros caros por titulo mayores de 11 dolares, resumirlos por titulo, autor, precio");
+      console.log("2. Mostrar resumen de libros que tengan menos de 100 paginas resumirlos por titulo, autor, editorial y paginas");
+      console.log("3. Mostrar resumen de libros caros mayores a 20 dolares de mayor a menor resumirlos por titulo, autor, precio");
+      console.log("4. Mostrar resumen de libros por numero mas alto de paginas resumirlos por titulo, autor, editorial, paginas ordenados de mayor a menor");
     }
 function mostrarLibros(libros) {
 console.log("Pila actual de libros:", libros);
@@ -498,13 +507,19 @@ const listaConDescuento = libros.map((libros) => {
 
 
 //Listar los libros por Titulo, Autor, Editorial, Precio y descuento.
-
 const listaDescuento = libros.map((libros) => {
+  return{
+    ...libros,
+    descuento:20,
+  }
+})
+.map((libros) => {
   return{
     titulo: libros.titulo,
     autor: libros.autor,
     editorial: libros.editorial,
     precio: libros.precio,
+    descuento: libros.descuento
   }
 });
 
@@ -531,6 +546,62 @@ const resumenLibros = libros.sort((a,b)=> b.paginas - a.paginas)
 //Ordenar los libros por numero de paginas de mayor a menor
 
 const  ordenarLibrosNumPaginas= libros.sort((a,b)=> b.paginas - a.paginas);
+
+
+
+
+
+//Obtener un array de libros caros por titulo mayores de 11 dolares, resumirlos por titulo, autor, precio. 
+
+
+const librosCaros = libros.filter((libro) => {
+  return libro.precio > 11
+})
+ .map((libros) => {
+  return{
+    titulo: libros.titulo,
+    autor: libros.autor,
+    precio: libros.precio
+  }
+});
+
+//Realiza un resumen de libros que tengan menos de 100 paginas resumirlos por titulo, autor, editorial y paginas.
+
+const menosPaginas = libros.filter((libro) => {
+  return libro.paginas - 100
+})
+ .map((libros) => {
+  return{
+    titulo: libros.titulo,
+    autor: libros.autor,
+    editorial: libros.editorial,
+    paginas: libros.paginas
+  }
+});
+//Realizar un resumen de libros caros mayores a 20 dolares de mayor a menor resumirlos por titulo, autor, precio.
+
+const librosCaros1 = libros.filter((libro) => {
+  return libro.precio > 20
+})
+ .map((libros) => {
+  return{
+    titulo: libros.titulo,
+    autor: libros.autor,
+    precio: libros.precio,
+  }
+});
+//Realizar un resumen de libros por numero mas alto de paginas resumirlos por titulo, autor, editorial, paginas ordenados de mayor a menor.
+
+const librosNumAltoPaginas = libros.sort((a,b)=> b.paginas - a.paginas)
+ .map((libros) => {
+  return{
+    titulo: libros.titulo,
+    autor: libros.autor,
+    precio: libros.precio,
+  }
+});
+
+
 
 var continuar = "si";
 
@@ -609,7 +680,29 @@ do {
       case '8':
         console.table(ordenarLibrosNumPaginas);
         break;
-    case '9':
+
+        case '9':
+          mostrarResumenEcadenados();
+      var subOpcionEncadenados = prompt("Seleccione una opción:");
+      switch (subOpcionEncadenados) {
+        case '1':
+          console.table(librosCaros);
+        break;
+        case '2':
+          console.table(menosPaginas);
+          break;
+          case '3':
+          console.table(librosCaros1);
+        break;
+        case '4':
+          console.table(librosNumAltoPaginas);
+          break;
+        default:
+          console.log("Opción no válida en el submenú. Intente de nuevo.");
+          break;
+      }
+      break;
+    case '10':
       continuar = "no";
       console.log("Saliendo del programa...");
       break;
