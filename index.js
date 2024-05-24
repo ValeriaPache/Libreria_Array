@@ -365,15 +365,22 @@ console.log("1. Mostrar pila de libros");
 console.log("2. Añadir un libro a la pila");
 console.log("3. Quitar el último libro de la pila");
 console.log("4. Mostrar la longitud de la pila");
-console.log("5. Mostrar la una lista");
-console.log("6. Salir");
+console.log("5. Mostrar una lista de libros");
+console.log("6. Mostrar una lista de libros con descuento");
+console.log("7. Salir");
 }
 
-function mostrarMenu1() {
+function mostrarMenuLista() {
   console.log("Seleccione una opción:");
   console.log("1. Mostrar la una lista de libros");
   console.log("2. Mostrar 10 iteraciones diferentes");
   }
+
+  function mostrarMenuDescuento() {
+    console.log("Seleccione una opción:");
+    console.log("1. Mostrar descuento");
+    console.log("2. Mostrar los libros por Titulo, Autor, Editorial, Precio y descuento");
+    }
 
 function mostrarLibros(libros) {
 console.log("Pila actual de libros:", libros);
@@ -473,34 +480,56 @@ const lista10 = libros.map((libros) => {
 });
 
 
+//Al array de objetos creado se debe agregar un atributo llamado descuento al cual tiene un valor del 20 porciento.
+
+const listaConDescuento = libros.map((libros) => {
+  return{
+    ...libros,
+    descuento:20,
+  }
+});
+
+
+//Listar los libros por Titulo, Autor, Editorial, Precio y descuento.
+
+const listaDescuento = libros.map((libros) => {
+  return{
+    titulo: libros.titulo,
+    autor: libros.autor,
+    editorial: libros.editorial,
+    precio: libros.precio,
+  }
+});
+
+
 
 var continuar = "si";
 
 do {
-mostrarMenu();
-var opcion = prompt("Seleccione una opción:");
-switch (opcion) {
-  case '1':
-    mostrarLibros(libros);
-    break;
-  case '2':
-    // Aquí deberías obtener detalles del libro a añadir, en este caso usamos el libroEjemplo
-    añadirLibro(libros, libroEjemplo);
-    break;
-  case '3':
-    quitarLibro(libros);
-    break;
-  case '4':
-    mostrarLongitud(libros);
-    break;
-    case '5':option=prompt(mostrarMenu1)
-    mostrarMenu1()
-    var opcion = prompt("Seleccione una opción:");
-      switch (opcion) {
-          case '1':
+  mostrarMenu();
+  var opcion = prompt("Seleccione una opción:");
+  switch (opcion) {
+    case '1':
+      mostrarLibros(libros);
+      break;
+    case '2':
+      // Aquí deberías obtener detalles del libro a añadir, en este caso usamos el libroEjemplo
+      añadirLibro(libros, libroEjemplo);
+      break;
+    case '3':
+      quitarLibro(libros);
+      break;
+    case '4':
+      mostrarLongitud(libros);
+      break;
+    case '5':
+      mostrarMenuLista();
+      var subOpcion = prompt("Seleccione una opción:");
+      switch (subOpcion) {
+        case '1':
           console.table(lista);
           break;
-          case '2':
+        case '2':
           console.table(lista1);
           console.table(lista2);
           console.table(lista3);
@@ -512,17 +541,38 @@ switch (opcion) {
           console.table(lista9);
           console.table(lista10);
           break;
+        default:
+          console.log("Opción no válida en el submenú. Intente de nuevo.");
+          break;
       }
-    break;
-  case '6':
-    continuar = "no";
-    console.log("Saliendo del programa...");
-    break;
-  default:
-    console.log("Opción no válida. Intente de nuevo.");
-    break;
-}
-if (continuar !== "no") {
-  continuar = prompt("Desea continuar (si/no)").toLowerCase();
-}
+      break;
+
+      case '6':
+      mostrarMenuDescuento();
+      var subOpciondesc = prompt("Seleccione una opción:");
+      switch (subOpciondesc) {
+        case '1':
+          console.table(listaConDescuento);
+        break;
+        case '2':
+          console.table(listaDescuento);
+          break;
+        default:
+          console.log("Opción no válida en el submenú. Intente de nuevo.");
+          break;
+      }
+      break;
+    case '7':
+      continuar = "no";
+      console.log("Saliendo del programa...");
+      break;
+    default:
+      console.log("Opción no válida. Intente de nuevo.");
+      break;
+  }
+  if (continuar !== "no") {
+    continuar = prompt("Desea continuar (si/no)").toLowerCase();
+  }
 } while (continuar === "si");
+
+
