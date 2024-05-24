@@ -368,7 +368,8 @@ console.log("4. Mostrar la longitud de la pila");
 console.log("5. Mostrar una lista de libros");
 console.log("6. Mostrar una lista de libros con descuento");
 console.log("7. Mostrar resumenes de este fragmento");
-console.log("8. Salir");
+console.log("8. Mostrar libros ordenados por numeros de paginas");
+console.log("9. Salir");
 }
 
 function mostrarMenuLista() {
@@ -527,7 +528,9 @@ const resumenLibros = libros.sort((a,b)=> b.paginas - a.paginas)
   }
 });
 
+//Ordenar los libros por numero de paginas de mayor a menor
 
+const  ordenarLibrosNumPaginas= libros.sort((a,b)=> b.paginas - a.paginas);
 
 var continuar = "si";
 
@@ -603,7 +606,10 @@ do {
           break;
       }
       break;
-    case '8':
+      case '8':
+        console.table(ordenarLibrosNumPaginas);
+        break;
+    case '9':
       continuar = "no";
       console.log("Saliendo del programa...");
       break;
