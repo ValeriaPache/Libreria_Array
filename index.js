@@ -375,7 +375,7 @@ function mostrarMenu() {
 
 function mostrarMenuLista() {
   console.log("Seleccione una opción:");
-  console.log("1. Mostrar la una lista de libros");
+  console.log("1. Mostrar una lista de libros");
   console.log("2. Mostrar 10 iteraciones diferentes");
 }
 
@@ -598,6 +598,7 @@ const librosNumAltoPaginas = libros.sort((a,b)=> b.paginas - a.paginas)
     titulo: libros.titulo,
     autor: libros.autor,
     precio: libros.precio,
+    paginas: libros.paginas,
   }
 });
 
