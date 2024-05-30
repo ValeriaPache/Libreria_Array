@@ -182,7 +182,7 @@ let libros = [
     ubicacion: "San Petersburgo",
     fecha_publicacion: "1866-01-01",
     editorial: "Penguin Classics",
-    paginas: 671,
+    paginas: 90,
     dimensiones: "13x2.8x20 cm",
     peso: "0.5 kg"
   },
@@ -233,7 +233,7 @@ let libros = [
     ubicacion: "Londres",
     fecha_publicacion: "1603-01-01",
     editorial: "Penguin Classics",
-    paginas: 342,
+    paginas: 42,
     dimensiones: "13x1.9x20 cm",
     peso: "0.4 kg"
   },
@@ -267,7 +267,7 @@ let libros = [
     ubicacion: "Atenas",
     fecha_publicacion: "-800-01-01",
     editorial: "Oxford University Press",
-    paginas: 704,
+    paginas: 99,
     dimensiones: "15x3x23 cm",
     peso: "0.8 kg"
   },
@@ -284,7 +284,7 @@ let libros = [
     ubicacion: "Moscú",
     fecha_publicacion: "1877-01-01",
     editorial: "Oxford University Press",
-    paginas: 964,
+    paginas: 64,
     dimensiones: "14x3.5x22 cm",
     peso: "1 kg"
   },
@@ -566,7 +566,7 @@ const librosCaros = libros.filter((libro) => {
 //Realiza un resumen de libros que tengan menos de 100 paginas resumirlos por titulo, autor, editorial y paginas.
 
 const menosPaginas = libros.filter((libro) => {
-  return libro.paginas - 100
+  return libro.paginas < 100
 })
  .map((libros) => {
   return{
