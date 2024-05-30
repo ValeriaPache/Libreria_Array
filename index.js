@@ -593,6 +593,9 @@ const librosCaros1 = libros.filter((libro) => {
 //Realizar un resumen de libros por numero mas alto de paginas resumirlos por titulo, autor, editorial, paginas ordenados de mayor a menor.
 
 const librosNumAltoPaginas = libros.sort((a,b)=> b.paginas - a.paginas)
+.filter((libro) => {
+  return libro.paginas > 100
+})
  .map((libros) => {
   return{
     titulo: libros.titulo,
