@@ -398,16 +398,16 @@ function mostrarResumenEcadenados() {
   console.log("3. Mostrar resumen de libros caros mayores a 20 dolares de mayor a menor resumirlos por titulo, autor, precio");
   console.log("4. Mostrar resumen de libros por numero mas alto de paginas resumirlos por titulo, autor, editorial, paginas ordenados de mayor a menor");
 }
-
+// Mostrar la pila actual de libros.
 function mostrarLibros(libros) {
   console.log("Pila actual de libros:", libros);
 }
-
+//defina la logica para Agregar un libro encima de la pila usando el método push. 
 function añadirLibro(libros, libro) {
   libros.push(libro);
   console.log(`Libro añadido: ${libro.titulo}`);
 }
-
+// Quitar un libro de encima de la pila. 
 function quitarLibro(libros) {
   const libroQuitado = libros.pop();
    if (libroQuitado) {
@@ -602,7 +602,7 @@ const librosNumAltoPaginas = libros.sort((a,b)=> b.paginas - a.paginas)
 });
 
 
-
+// Implementa un ciclo que permita a los usuarios interactuar con la pila hasta que decidan salir.
 var continuar = "si";
 
 do {
