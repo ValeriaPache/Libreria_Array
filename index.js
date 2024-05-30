@@ -600,7 +600,7 @@ const librosNumAltoPaginas = libros.sort((a,b)=> b.paginas - a.paginas)
   return{
     titulo: libros.titulo,
     autor: libros.autor,
-    precio: libros.precio,
+    editorial: libros.editorial,
     paginas: libros.paginas,
   }
 });
