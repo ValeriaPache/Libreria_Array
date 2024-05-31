@@ -406,6 +406,7 @@ function mostrarFuncionalidadesDeEsteSegmento() {
   console.log("3. Mostrar un objeto del array por fecha de publicación");
   console.log("4. Mostrar un objeto del array por genero");
   console.log("5. Mostrar un objeto del array por idioma");
+  console.log("6. Mostrar 10 iteraciones diferentes de búsqueda de libros en el sistema"); 
 }
 // Mostrar la pila actual de libros.
 function mostrarLibros(libros) {
@@ -641,6 +642,39 @@ let objetoPorIdioma = libros.find((libro) => {
   return libro.idioma === "Alemán";
 });
 
+// Crear 10 iteraciones diferentes de búsqueda de libros en el sistema.
+
+
+let iteracion1 = libros.find((libro) => {
+  return libro.autor === "Miguel de Cervantes";
+});
+let iteracion2 = libros.find((libro) => {
+  return libro.precio === 70.000;
+});
+let iteracion3 = libros.find((libro) => {
+  return libro.formato === "Tapa blanda";
+});
+let iteracion4 = libros.find((libro) => {
+  return libro.isbn === "978-84-376-0494-7";
+});
+let iteracion5 = libros.find((libro) => {
+  return libro.descripcion === "Una distopía sobre un régimen totalitario.";
+});
+let iteracion6 = libros.find((libro) => {
+  return libro.estado === "Nuevo";
+});
+let iteracion7 = libros.find((libro) => {
+  return libro.editorial === "Editorial Sudamericana";
+});
+let iteracion8 = libros.find((libro) => {
+  return libro.peso === "0.35 kg";
+});
+let iteracion9 = libros.find((libro) => {
+  return libro.ubicacion === "Atenas";
+});
+let iteracion10 = libros.find((libro) => {
+  return libro.dimensiones === "13x2.8x20 cm";
+});
 
 // Implementa un ciclo que permita a los usuarios interactuar con la pila hasta que decidan salir.
 var continuar = "si";
@@ -758,6 +792,18 @@ do {
               break;
               case '5':
                 console.table(objetoPorIdioma);
+              break;
+              case '6':
+                console.table(iteracion1);
+                console.table(iteracion2);
+                console.table(iteracion3);
+                console.table(iteracion4);
+                console.table(iteracion5);
+                console.table(iteracion6);
+                console.table(iteracion7);
+                console.table(iteracion8);
+                console.table(iteracion9);
+                console.table(iteracion10);
               break;
               default:
                 console.log("Opción no válida en el submenú. Intente de nuevo.");
