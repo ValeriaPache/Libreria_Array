@@ -370,7 +370,8 @@ function mostrarMenu() {
   console.log("7. Mostrar resumenes de este fragmento");
   console.log("8. Mostrar libros ordenados por numeros de paginas");
   console.log("9. Mostrar Resumenes de este fragmento encadenados");
-  console.log("10. Salir");
+  console.log("10. Mostrar las funcionalidades de este segmento");
+  console.log("11. Salir");
 }
 
 function mostrarMenuLista() {
@@ -397,6 +398,14 @@ function mostrarResumenEcadenados() {
   console.log("2. Mostrar resumen de libros que tengan menos de 100 paginas resumirlos por titulo, autor, editorial y paginas");
   console.log("3. Mostrar resumen de libros caros mayores a 20 dolares de mayor a menor resumirlos por titulo, autor, precio");
   console.log("4. Mostrar resumen de libros por numero mas alto de paginas resumirlos por titulo, autor, editorial, paginas ordenados de mayor a menor");
+}
+
+function mostrarFuncionalidadesDeEsteSegmento() {
+  console.log("1. Mostrar un objeto del array por titulo");
+  console.log("2. Mostrar un objeto del array por autor");
+  console.log("3. Mostrar un objeto del array por fecha de publicación");
+  console.log("4. Mostrar un objeto del array por genero");
+  console.log("5. Mostrar un objeto del array por idioma");
 }
 // Mostrar la pila actual de libros.
 function mostrarLibros(libros) {
@@ -606,6 +615,33 @@ const librosNumAltoPaginas = libros.sort((a,b)=> b.paginas - a.paginas)
 });
 
 
+
+//                                               segunda actividad
+
+
+// Buscar un objeto del array por titulo.
+let objetoPorTitulo = libros.find((libro) => {
+  return libro.titulo === "Los Miserables";
+});
+
+// Buscar un objeto del array por autor.
+let objetoPorAutor = libros.find((libro) => {
+  return libro.autor === "Homero";
+});
+// Buscar un objeto del array por fecha de publicación.
+let objetoPorfechaPublicacion = libros.find((libro) => {
+  return libro.fecha_publicacion === "1915-01-01";
+});
+// Buscar un objeto del array por genero.
+let objetoPorGenero = libros.find((libro) => {
+  return libro.genero === "Ficción";
+});
+// Buscar un objeto del array por idioma.
+let objetoPorIdioma = libros.find((libro) => {
+  return libro.idioma === "Alemán";
+});
+
+
 // Implementa un ciclo que permita a los usuarios interactuar con la pila hasta que decidan salir.
 var continuar = "si";
 
@@ -705,6 +741,30 @@ do {
             }
         break;
         case '10':
+          mostrarFuncionalidadesDeEsteSegmento();
+           var subOpcionSegmento = prompt("Seleccione una opción:");
+            switch (subOpcionSegmento) {
+              case '1':
+                console.table(objetoPorTitulo);
+              break;
+              case '2':
+                console.table(objetoPorAutor);
+              break;
+              case '3':
+                console.table(objetoPorfechaPublicacion);
+              break;
+              case '4':
+                console.table(objetoPorGenero);
+              break;
+              case '5':
+                console.table(objetoPorIdioma);
+              break;
+              default:
+                console.log("Opción no válida en el submenú. Intente de nuevo.");
+              break;
+            }
+        break;
+        case '11':
           continuar = "no";
           console.log("Saliendo del programa...");
         break;
